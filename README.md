@@ -20,5 +20,5 @@ The download link: http://www.ee.surrey.ac.uk/CVSSP/demos/chars74k/
 - Create a virtual environment containing the requirement libraries from the requirements.txt file and activate it.
 - Facing your webcam with an image of the puzzle, enter python sudokuWebcam.py in your terminal and the puzzle is solved
 
-The jupyter notebook file can also be used for step-by-step understanding of how the application was built and solve the puzzle too.
+The jupyter notebook file can also be used for step-by-step understanding of how the application was built and solve the puzzle via both methods.
 
