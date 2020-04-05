@@ -1,6 +1,6 @@
 # Sudoku-Game-Solver
 ## Introduction
-This is a Computer Vision Application that solves a 9x9 Sudoku Puzzle.This application can solve the 3 major difficulties of the puzzle, which include Easy,Medium & Hard The puzzle is solved by using a Deep Learning Neural Network model to predict the digits in the image. The digits are extracted and solved using Back-Tracking Algorithm, which is a popular method of solving a sudoku puzzle. The newly found digits are then placed in the empty cells of the puzzle. An extra feature included in this application is the ability to solve the puzzle by reading in live video of the puzzle through the Computer's webcam. Enjoy!
+This is a Computer Vision Application that solves a 9x9 Sudoku Puzzle.This application can solve the 3 major difficulties of the puzzle, which include Easy, Medium & Hard The puzzle is solved by using a Deep Learning Neural Network model to predict the digits in the image. The digits are extracted and solved using Backtracking Algorithm, which is a popular method of solving a sudoku puzzle. The newly found digits are then placed in the empty cells of the puzzle. An extra feature included in this application is the ability to solve the puzzle by reading in live video of the puzzle through the Computer's webcam. Enjoy!
 ## Dependency
 - Python3, Ubuntu 18.04 or WindowsOS
 - OpenCV, Tensorflow, Keras, Pillow
@@ -20,5 +20,5 @@ The download link: http://www.ee.surrey.ac.uk/CVSSP/demos/chars74k/
 - Create a virtual environment containing the requirement libraries from the requirements.txt file and activate it.
 - Facing your webcam with an image of the puzzle, enter python sudokuWebcam.py in your terminal and the puzzle is solved
 
-The jupyter notebook file can also be used for step-by-step understanding of how the application was built and solve the puzzle too.
+The jupyter notebook file can also be used for step-by-step understanding of how the application was built and solve the puzzle via both methods.
 
