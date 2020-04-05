@@ -1,6 +1,7 @@
 import cv2
 from backtracking import solve
 from main import getCellPositions, extractSudokuDigits
+from base import img
 from utils import img_PT
 
 
@@ -26,7 +27,7 @@ def detectEmptyCell(cell,img):
         return 0
 
 def placeSudokuDigits(img_PT):
-    img = cv2.imread('../hough.jpg')
+    global img
     #we start looking at the middle of the cell as this is where the sudoku digit should be at
     img_PT = cv2.resize(img_PT,(252,252)) #had to reshape the image size to fit the model shape
     img_color = cv2.resize(img,(252,252))
@@ -40,7 +41,7 @@ def placeSudokuDigits(img_PT):
             pos = detectEmptyCell(cr[i][j],img_PT)
             digit_text = digits[i][j]
             if pos == []:
-                cv2.putText(img_color, str(digit_text), ((cr[i][j][0]+8),(cr[i][j][2]+19)),cv2.FONT_HERSHEY_SIMPLEX,0.7, (0, 0, 255), 2, cv2.LINE_AA)
+                cv2.putText(img_color, str(digit_text), ((cr[i][j][0]+8),(cr[i][j][2]+19)),cv2.FONT_HERSHEY_SIMPLEX,0.7, (255, 0, 0), 2, cv2.LINE_AA)
             else:
                 continue  
     cv2.imshow('puzzle',img_color)

@@ -16,7 +16,7 @@ def preprocessImage(img):
 
 def probHoughTransformUtil(thresh_inv):
     #reading in the raw image
-    img = cv2.imread('../sudoku_pic.png')
+    global img
     
     #applying probabilistic hough transform on the binary image
     minLineLength = 100
