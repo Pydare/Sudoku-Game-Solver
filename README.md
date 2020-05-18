@@ -4,7 +4,7 @@ This is a Computer Vision Application that solves a 9x9 Sudoku Puzzle.This appli
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![Image before being solved](https://github.com/Pydare/Sudoku-Game-Solver/blob/master/easy.png) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  ![Image after being solved](https://github.com/Pydare/Sudoku-Game-Solver/blob/master/solved_easy.png)
 
-                            ### Images before and after being solved
+                              Images before and after being solved
 ## Dependency
 - Python3, Ubuntu 18.04 or WindowsOS
 - OpenCV, Tensorflow, Keras, Pillow
