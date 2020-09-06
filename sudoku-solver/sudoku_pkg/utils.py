@@ -1,6 +1,6 @@
 import cv2
 import numpy as np
-from base import img
+#from base import img 
 
 def preprocessImage(img):
     #converting the image to grayscale
@@ -14,9 +14,9 @@ def preprocessImage(img):
 
     return thresh_inv
 
-def probHoughTransformUtil(thresh_inv):
+def probHoughTransformUtil(thresh_inv,img):
     #reading in the raw image
-    global img
+    #global img
     
     #applying probabilistic hough transform on the binary image
     minLineLength = 100
@@ -106,7 +106,7 @@ def four_point_transform(image, pts):
     return warped
 
 
-thresh_inv = preprocessImage(img)
-poly_approx = probHoughTransformUtil(thresh_inv)
-#perspective transformed image
-img_PT = four_point_transform(thresh_inv,poly_approx)
+# thresh_inv = preprocessImage(img)
+# poly_approx = probHoughTransformUtil(thresh_inv)
+# #perspective transformed image
+# img_PT = four_point_transform(thresh_inv,poly_approx)

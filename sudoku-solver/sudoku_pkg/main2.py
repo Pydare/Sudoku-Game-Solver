@@ -1,8 +1,8 @@
 import cv2
-from backtracking import solve
-from main import getCellPositions, extractSudokuDigits
-from base import img
-from utils import img_PT
+from sudoku_pkg.backtracking import solve
+from sudoku_pkg.main import getCellPositions, extractSudokuDigits
+#from base import img
+#from utils import img_PT 
 
 
 
@@ -26,8 +26,8 @@ def detectEmptyCell(cell,img):
     else:
         return 0
 
-def placeSudokuDigits(img_PT):
-    global img
+def placeSudokuDigits(img_PT,img):
+    #global img
     #we start looking at the middle of the cell as this is where the sudoku digit should be at
     img_PT = cv2.resize(img_PT,(252,252)) #had to reshape the image size to fit the model shape
     img_color = cv2.resize(img,(252,252))

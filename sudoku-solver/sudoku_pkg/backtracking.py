@@ -8,7 +8,7 @@ def print_board(bo):
             if j % 3 == 0 and j != 0:
                 print(" | ", end="")
 
-            if j == 8:
+            if j == 8: 
                 print(bo[i][j])
             else:
                 print(str(bo[i][j]) + " ", end="")

@@ -2,9 +2,9 @@ from tensorflow.keras.models import load_model
 import tensorflow as tf 
 from PIL import Image
 import cv2
-from utils import img_PT
+#from utils import img_PT
 
-
+ 
 new_model = load_model('../keras_digit_model.h5')
 
 # model to predict the exact digit in the image
