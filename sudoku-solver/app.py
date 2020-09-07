@@ -11,30 +11,35 @@ app = Flask(__name__)
 
 @app.route('/upload-image', methods=['GET','POST'])
 def upload_image():
-    
-    if request.method == "POST":
-        if request.files:
-            #  read encoded image
-            image_string = request.files["image"].read()
+    try:
+        if request.method == "POST":
+            if request.files:
+                #  read encoded image
+                image_string = request.files["image"].read()
 
-            #  convert binary data to numpy array
-            nparr = np.fromstring(image_string, np.uint8)
+                #  convert binary data to numpy array
+                nparr = np.fromstring(image_string, np.uint8)
 
-            #  let opencv decode image to correct format
-            img = cv2.imdecode(nparr, cv2.IMREAD_ANYCOLOR)
+                #  let opencv decode image to correct format
+                img = cv2.imdecode(nparr, cv2.IMREAD_ANYCOLOR)
 
-            #preprocessing the image
-            thresh_inv = preprocessImage(img)
-            poly_approx = probHoughTransformUtil(thresh_inv,img)
-            #perspective transformed image
-            img_PT = four_point_transform(thresh_inv,poly_approx)
+                #preprocessing the image
+                thresh_inv = preprocessImage(img)
+                poly_approx = probHoughTransformUtil(thresh_inv,img)
+                #perspective transformed image
+                img_PT = four_point_transform(thresh_inv,poly_approx)
 
-            #sudoku solved
-            placeSudokuDigits(img_PT,img)
-
+                #sudoku solved
+                placeSudokuDigits(img_PT,img)
+    except KeyError:
+        abort(404)
 
     return("There is an image")
 
+@app.errorhandler(404)
+def not_found(error):
+    return make_response(jsonify({'error':'Upload the right file format'}), 404)
+ 
 
 if __name__ == '__main__':
     app.run(debug=True)
