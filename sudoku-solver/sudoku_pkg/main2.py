@@ -44,6 +44,9 @@ def placeSudokuDigits(img_PT,img):
                 cv2.putText(img_color, str(digit_text), ((cr[i][j][0]+8),(cr[i][j][2]+19)),cv2.FONT_HERSHEY_SIMPLEX,0.7, (255, 0, 0), 2, cv2.LINE_AA)
             else:
                 continue  
-    cv2.imshow('puzzle',img_color)
-    cv2.waitKey()
+    """cv2.imshow('puzzle',img_color)
+    cv2.waitKey()"""
+    #returning an image file
+    res_img = cv2.imwrite("result.png",img_color)
+    return res_img
 

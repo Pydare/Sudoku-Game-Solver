@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, abort, make_response, request, url_for, render_template
+from flask import Flask, jsonify, abort, make_response, request, url_for, render_template, send_file
 import cv2
 import base64
 import numpy as np
@@ -30,11 +30,15 @@ def upload_image():
                 img_PT = four_point_transform(thresh_inv,poly_approx)
 
                 #sudoku solved
-                placeSudokuDigits(img_PT,img)
+                image_file = placeSudokuDigits(img_PT,img)
+
+                """converting the image file to string format To Decode: https://stackoverflow.com/questions/58494586/how-to-return-image-as-part-of-response-from-a-get-request-in-flask
+                with open("result.png", "rb") as image_file:
+                    encoded_string = base64.b64encode(image_file.read())"""    
     except KeyError:
         abort(404)
-
-    return("There is an image")
+    print(image_file)
+    return send_file("result.png")
 
 @app.errorhandler(404)
 def not_found(error):
